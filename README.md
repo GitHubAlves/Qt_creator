@@ -29,3 +29,7 @@ Owrks with Qtcreator
 
   QT é uma ótima biblioteca gráfica para seus aplicativos modernos. Mas por trás de uma ótima biblioteca, existe um ótimo IDE. Neste caso, QTCreator é  
   muito bom e ideal para desenvolver aplicações que usem QT. E neste post, você aprendeu como instalá-lo.
+
+=======================================================
+<h3>Para desinstalar</h3>
+https://stackoverflow.com/questions/39625379/how-to-uninstall-qt5
