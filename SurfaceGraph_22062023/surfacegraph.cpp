@@ -1,4 +1,5 @@
 #include "surfacegraph.h"
+#include "interface.h"
 
 SurfaceGraph::SurfaceGraph(QWidget *parent)
     : QWidget(parent)

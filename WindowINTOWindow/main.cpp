@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 
     //Criação da linha editavel
     QLineEdit *linha=new QLineEdit;
-    QLineEdit *linha1=new QLineEdit;
+    //QLineEdit *linha1=new QLineEdit;
     layoutParaBox1->addRow("Z=", linha);
 
     //este botao vai para um layout BOX1 que em seguida para dentro de uma caixa

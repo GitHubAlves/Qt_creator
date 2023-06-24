@@ -24,7 +24,6 @@ private:
     QValue3DAxis *axisX;
     QValue3DAxis *axisY;
     QValue3DAxis *axisZ;
-
     QHBoxLayout * layout;
 };
 #endif // SURFACEGRAPH_H
