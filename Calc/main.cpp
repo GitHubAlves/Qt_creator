@@ -1,3 +1,4 @@
+//Lucas
 #include <QtDataVisualization>
 #include <Q3DSurface>
 int main(int argc, char **argv)
