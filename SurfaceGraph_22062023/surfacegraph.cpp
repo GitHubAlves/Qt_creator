@@ -1,7 +1,6 @@
 #include "surfacegraph.h"
-#include "interface.h"
 
-SurfaceGraph_::SurfaceGraph_(QWidget *parent): QWidget(parent)
+SurfaceGraph::SurfaceGraph(QWidget *parent): QWidget(parent)
 {
     //Criação do widget do gráfico 3D
     graph = new Q3DSurface();
@@ -20,7 +19,7 @@ SurfaceGraph_::SurfaceGraph_(QWidget *parent): QWidget(parent)
         for (int j = -10; j <= 10; j++) {
             float x = i*0.5;
             float y = j*0.5;
-            float z =2*(x+y)/10; // Equação do plano
+            float z =2+(x*x+y*y)/10; // Equação do plano
 
             *dataRow << QVector3D(x, y, z);
         }
@@ -51,13 +50,11 @@ SurfaceGraph_::SurfaceGraph_(QWidget *parent): QWidget(parent)
     layoutSurface = new QHBoxLayout;
     layoutSurface->addWidget(QWidget::createWindowContainer(graph));
 
-
-    //this->setLayout(layoutSurface);
-    this->resize(900, 900);
-
+    this->setLayout(layoutSurface);
+    //this->resize(300, 300);
 }
 
-SurfaceGraph_::~SurfaceGraph_()
+SurfaceGraph::~SurfaceGraph()
 {
 }
 

@@ -1,5 +1,3 @@
-
-
 #ifndef SURFACEGRAPH_H
 #define SURFACEGRAPH_H
 
@@ -9,13 +7,13 @@
 #include <QSurface3DSeries>
 #include <QValue3DAxis>
 
-class SurfaceGraph_ : public QWidget
+class SurfaceGraph : public QWidget
 {
     Q_OBJECT
 
 public:
-    SurfaceGraph_(QWidget *parent = nullptr);
-    ~SurfaceGraph_();
+    SurfaceGraph(QWidget *parent = nullptr);
+    ~SurfaceGraph();
 
 private:
     Q3DSurface *graph;
@@ -28,4 +26,5 @@ private:
     QHBoxLayout  *layoutSurface;
 
 };
+
 #endif // SURFACEGRAPH_H

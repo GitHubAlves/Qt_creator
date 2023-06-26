@@ -1,6 +1,5 @@
 #include "interface.h"
 #include "surfacegraph.h"
-
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGroupBox>
@@ -18,11 +17,11 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
 
     //Box para apresentar o gráfico de superfície
     _Box2           =new QGroupBox("Graph");
-    _Box2->setFixedSize(600, 600);
+    _Box2->setMinimumSize(600,600);
 
-    //Craição do layout para a o box 1 e box 2
+    //Criação do layout para a o box 1 e box 2
     _layoutParaBox1 =new QFormLayout;
-    _layoutParaBox2 =new QFormLayout;
+    _layoutParaBox2 =new QVBoxLayout;
 
     //Criação de linha editavel
     _linha          =new QLineEdit;
@@ -34,13 +33,10 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _layoutParaBox1->addWidget(_ButtonParaBox1);
 
 
-
-
-    //_Box2->setLayout(_layoutParaBox2);
-    _surfaGraph =new SurfaceGraph_;
-    _layoutParaBox2->addWidget(_surfaGraph);
-
     _Box1->setLayout(_layoutParaBox1);
+
+    _graph =  new SurfaceGraph();
+    _layoutParaBox2->addWidget(_graph);
     _Box2->setLayout(_layoutParaBox2);
 
     _layout->addWidget(_Box1);
