@@ -1,8 +1,7 @@
 #include "surfacegraph.h"
 #include "interface.h"
 
-SurfaceGraph::SurfaceGraph(QWidget *parent)
-    : QWidget(parent)
+SurfaceGraph_::SurfaceGraph_(QWidget *parent): QWidget(parent)
 {
     //Criação do widget do gráfico 3D
     graph = new Q3DSurface();
@@ -49,15 +48,16 @@ SurfaceGraph::SurfaceGraph(QWidget *parent)
     graph->setAxisZ(axisZ);
 
     //criaçao de um layout
-    layout = new QHBoxLayout;
-    layout->addWidget(QWidget::createWindowContainer(graph));
+    layoutSurface = new QHBoxLayout;
+    layoutSurface->addWidget(QWidget::createWindowContainer(graph));
 
-    this->setLayout(layout);
+
+    //this->setLayout(layoutSurface);
     this->resize(900, 900);
 
 }
 
-SurfaceGraph::~SurfaceGraph()
+SurfaceGraph_::~SurfaceGraph_()
 {
 }
 

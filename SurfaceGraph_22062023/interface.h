@@ -1,7 +1,8 @@
 //Este arquivo gera a interface usuário, par ainserir
 //a expressão f(x,y);
-
+#include "surfacegraph.h"
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QGroupBox>
 #include <QFormLayout>
 #include <QLineEdit>
@@ -20,14 +21,14 @@ public:
     ~Interface();
 
 private:
-    QVBoxLayout *_layout;
-    QGroupBox   *_Box1;
-    QGroupBox   *_Box2;
-    QFormLayout *_layoutParaBox1;
-    QFormLayout *_layoutParaBox2;
-    QLineEdit   *_linha;
-    QPushButton *_ButtonParaBox1;
-
+    QHBoxLayout   *_layout;
+    QGroupBox     *_Box1;
+    QGroupBox     *_Box2;
+    QFormLayout   *_layoutParaBox1;
+    QFormLayout   *_layoutParaBox2;
+    QLineEdit     *_linha;
+    QPushButton   *_ButtonParaBox1;
+    SurfaceGraph_ *_surfaGraph;
 
 
 

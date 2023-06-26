@@ -2,16 +2,16 @@
 #include "surfacegraph.h"
 
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QGroupBox>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPushButton>
 
-Interface::Interface(QWidget *parent)
-    : QWidget{parent}
+Interface::Interface(QWidget *parent) : QWidget(parent)
 {
      //O layout
-    _layout         =new QVBoxLayout;
+    _layout         =new QHBoxLayout;
 
       //Box para inserir a expressão
     _Box1           =new QGroupBox("Calc");
@@ -29,14 +29,19 @@ Interface::Interface(QWidget *parent)
     _layoutParaBox1->addRow("Z=", _linha);
 
 
-    _ButtonParaBox1 =new QPushButton;
+    _ButtonParaBox1 =new QPushButton("Enter");
     _ButtonParaBox1->setFixedSize(100, 20);
     _layoutParaBox1->addWidget(_ButtonParaBox1);
 
 
+
+
+    //_Box2->setLayout(_layoutParaBox2);
+    _surfaGraph =new SurfaceGraph_;
+    _layoutParaBox2->addWidget(_surfaGraph);
+
     _Box1->setLayout(_layoutParaBox1);
     _Box2->setLayout(_layoutParaBox2);
-
 
     _layout->addWidget(_Box1);
     _layout->addWidget(_Box2);
