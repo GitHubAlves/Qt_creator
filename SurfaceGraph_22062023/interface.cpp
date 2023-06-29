@@ -1,4 +1,5 @@
 #include "interface.h"
+#include "parsing.h"
 #include "surfacegraph.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -6,9 +7,12 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QString>
 
 Interface::Interface(QWidget *parent) : QWidget(parent)
 {
+    Parsing Exec_Expr;
+
      //O layout
     _layout         =new QHBoxLayout;
 
@@ -26,7 +30,8 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     //Criação de linha editavel
     _linha          =new QLineEdit;
     _layoutParaBox1->addRow("Z=", _linha);
-
+    //pega a expressao digitada na linha
+    _text =  _linha->text();
 
     _ButtonParaBox1 =new QPushButton("Enter");
     _ButtonParaBox1->setFixedSize(100, 20);
@@ -42,8 +47,10 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _layout->addWidget(_Box1);
     _layout->addWidget(_Box2);
 
+    //QObject::connect(_ButtonParaBox1, &QPushButton::clicked, Exec_Expr.getExpressao());
     this->setLayout(_layout);
 }
+
 
 Interface::~Interface()
 {

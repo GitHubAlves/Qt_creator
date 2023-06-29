@@ -1,4 +1,5 @@
 #include "parsing.h"
+
 #include <iostream>
 using namespace std;
 #include <string>
@@ -12,7 +13,7 @@ Parsing::Parsing(string Expr)
     //=========================
      _calcInParenteses=0;
      _calcOutParenteses=0;
-     _vetAuxiliar[2]=0, 0;
+     _vetAuxiliar[2];
      _B=0;
     //=========================
 
@@ -57,27 +58,22 @@ void Parsing::setExpressao(int value_x, int value_y, string expressao)
         if(expressao[i]=='+' && expressao[i+1] != 40)
         {
             _calcOutParenteses=(expressao[i-1]-'0') + (expressao[i+1]-'0');
-//            printf("\ncalcInParenteses=%d..", _calcInParenteses);
-//            printf("\n+calcOutParenteses=%d..", _calcOutParenteses);
+
         }
         if(expressao[i]=='-' && expressao[i+1] != 40)
         {
             _calcOutParenteses=(expressao[i-1]-'0') - (expressao[i+1]-'0');
-            //printf("\ncalcInParenteses=%d...", calcInParenteses);
-            //printf("\n-calcOutParenteses=%d...", calcOutParenteses);
-        }
+
 
         if(expressao[i]=='+' && expressao[i+1] == 40)
         {
             _calcOutParenteses=_calcOutParenteses + _calcInParenteses;//6+41
-//            printf("\ncalcInParenteses=%d....", _calcInParenteses);
-//            printf("\n++calcOutParenteses=%d....", _calcOutParenteses);
+
         }
         if(expressao[i]=='-' && expressao[i+1] == 40)
         {
             _calcOutParenteses=_calcOutParenteses - _calcInParenteses;//6-41
-            //printf("\ncalcInParenteses=%d.....", _calcInParenteses);
-            //printf("\n--calcOutParenteses=%d.....", _calcOutParenteses);
+
         }
     }
 
@@ -85,10 +81,12 @@ void Parsing::setExpressao(int value_x, int value_y, string expressao)
 
 float Parsing::getExpressao()
 {
-    return _calcOutParenteses;
+    return (float)_calcOutParenteses;
 }
 
 void Parsing::show()
 {
+
     cout<<"O Resultado eh: "<<getExpressao()<<endl;
+
 }

@@ -1,4 +1,3 @@
-//#include "surfacegraph.h"
 #include "interface.h"
 #include <QApplication>
 

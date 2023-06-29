@@ -4,6 +4,7 @@
 #define INTERFACE_H
 
 #include "surfacegraph.h"
+#include "parsing.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -12,13 +13,14 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QWidget>
+#include <QString>
 
 
 class Interface : public QWidget
 {
     Q_OBJECT
 public:
-    Interface(QWidget *parent=nullptr);
+    Interface(QWidget *parent=nullptr);   
     ~Interface();
 
 private:
@@ -29,6 +31,7 @@ private:
     QVBoxLayout   *_layoutParaBox2;
     QLineEdit     *_linha;
     QPushButton   *_ButtonParaBox1;
+    QString       *_text;
     SurfaceGraph  *_graph;
 
 };
