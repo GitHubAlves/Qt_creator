@@ -1,26 +1,30 @@
-#include <string.h>
-using namespace std;
 
 #ifndef PARSING_H
 #define PARSING_H
 
-#include <QWidget>
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Parsing
 {
-
 public:
-    Parsing(int, int, string);
-    void  setparsingEpr(int, int, string);
-    float getParsingEpr();
+    Parsing(string);
+    void  setExpressao(int, int, string);
+    float getExpressao();
+    void show();
 
 
 private:
-    int _x;
-    int _y;
-    int _calcOutParenteses;
-    string _Expr;
-
+    int _tamanhoString=0;
+    int _x=0;
+    int _y=0;
+    string Expressao="";
+    //=========================
+    int _calcInParenteses=0;
+    int _calcOutParenteses=0;
+    int _vetAuxiliar[2]={0, 0};
+    int _B=0;
 };
 
 #endif // PARSING_H
