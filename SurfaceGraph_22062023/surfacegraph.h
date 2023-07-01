@@ -6,6 +6,8 @@
 #include <QSurfaceDataProxy>
 #include <QSurface3DSeries>
 #include <QValue3DAxis>
+#include "parsing.h"
+#include <QString>
 
 class SurfaceGraph : public QWidget
 {
@@ -13,6 +15,7 @@ class SurfaceGraph : public QWidget
 
 public:
     SurfaceGraph(QWidget *parent = nullptr);
+    void plot(Parsing expression);
     ~SurfaceGraph();
 
 private:
@@ -24,6 +27,7 @@ private:
     QValue3DAxis *axisY;
     QValue3DAxis *axisZ;
     QHBoxLayout  *layoutSurface;
+    Parsing      *exec_expr;
 
 };
 

@@ -23,6 +23,10 @@ public:
     Interface(QWidget *parent=nullptr);   
     ~Interface();
 
+public slots:
+    void _ButtonParaBox1_clicked();
+    void _plotButton_clicked();
+
 private:
     QHBoxLayout   *_layout;
     QGroupBox     *_Box1;
@@ -31,8 +35,10 @@ private:
     QVBoxLayout   *_layoutParaBox2;
     QLineEdit     *_linha;
     QPushButton   *_ButtonParaBox1;
+    QPushButton   *_plotButton;
     QString       *_text;
     SurfaceGraph  *_graph;
+    Parsing       *_expr;
 
 };
 

@@ -6,7 +6,10 @@
 
 SurfaceGraph::SurfaceGraph(QWidget *parent): QWidget(parent)
 {
-    Parsing exec_expr;
+
+    //exec_expr= new Parsing;
+
+
     //Criação do widget do gráfico 3D
     graph = new Q3DSurface();
 
@@ -23,10 +26,8 @@ SurfaceGraph::SurfaceGraph(QWidget *parent): QWidget(parent)
         dataRow = new QSurfaceDataRow();
         for (int j = -10; j <= 10; j++) {
             float x = i*0.5;
-            float y = j*0.5;
-            exec_expr.setExpressao(x, y, "2+(x*x+y*y)/10");
-            float z =exec_expr.getExpressao();//2+(x*x+y*y)/10; // Equação do plano
-
+            float y = j*0.5;            
+            float z = 2+(x*x+y*y);
             *dataRow << QVector3D(x, y, z);
         }
         dataArray->append(dataRow);

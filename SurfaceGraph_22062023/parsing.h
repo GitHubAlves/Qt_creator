@@ -9,9 +9,10 @@ using namespace std;
 class Parsing
 {
 public:
-    Parsing(string);
-    void  setExpressao(int, int, string);
-    float getExpressao();
+    Parsing(string Expr);
+    void  setExpressao(string Expr);
+    string getExpressao() { return expressao; }
+    int calcula(int x, int y);
     void show();
 
 
@@ -19,11 +20,11 @@ private:
     int _tamanhoString=0;
     int _x=0;
     int _y=0;
-    string Expressao="";
+    string expressao="";
     //=========================
     int _calcInParenteses=0;
     int _calcOutParenteses=0;
-    int _vetAuxiliar[2]={0, 0};
+    int _vetAuxiliar[2];
     int _B=0;
 };
 

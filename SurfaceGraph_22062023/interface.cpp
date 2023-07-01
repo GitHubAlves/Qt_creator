@@ -11,7 +11,7 @@
 
 Interface::Interface(QWidget *parent) : QWidget(parent)
 {
-    Parsing Exec_Expr;
+    _expr = new Parsing("2+2+(x*x+y*y)");
 
      //O layout
     _layout         =new QHBoxLayout;
@@ -31,12 +31,13 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _linha          =new QLineEdit;
     _layoutParaBox1->addRow("Z=", _linha);
     //pega a expressao digitada na linha
-    _text =  _linha->text();
 
     _ButtonParaBox1 =new QPushButton("Enter");
     _ButtonParaBox1->setFixedSize(100, 20);
     _layoutParaBox1->addWidget(_ButtonParaBox1);
 
+    _plotButton =new QPushButton("Plot");
+    _layoutParaBox1->addWidget(_plotButton);
 
     _Box1->setLayout(_layoutParaBox1);
 
@@ -47,10 +48,29 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _layout->addWidget(_Box1);
     _layout->addWidget(_Box2);
 
-    //QObject::connect(_ButtonParaBox1, &QPushButton::clicked, Exec_Expr.getExpressao());
+    QObject::connect(_ButtonParaBox1, SIGNAL(clicked(bool)),
+                     this, SLOT(_ButtonParaBox1_clicked()));
+
+    QObject::connect(_plotButton, SIGNAL(clicked(bool)),
+                     this, SLOT(_plotButton_clicked()));
+
     this->setLayout(_layout);
 }
 
+void Interface::_ButtonParaBox1_clicked(){
+    _expr->setExpressao(_linha->text().toStdString());
+};
+
+void Interface::_plotButton_clicked(){
+    //geracao dos pontos
+    int result;
+    for (int i = -10; i <= 10; i++) {
+        for (int j = -10; j <= 10; j++) {
+            result = _expr->calcula(i,j);
+            qDebug() << "x,y,z = "  << i <<  "," << j <<  "," << result <<  "\n";
+        }
+    }
+};
 
 Interface::~Interface()
 {
