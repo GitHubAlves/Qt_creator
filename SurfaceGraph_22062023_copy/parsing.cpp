@@ -38,7 +38,7 @@ void Parsing::setExpressao(string  Expr){
 float Parsing::calcula(float x, float y)
 {
      //============Percorre a expressão======================
-     return 2*(x+y)/10;
+     return (x*x+y*y)/10;
 }
 
 

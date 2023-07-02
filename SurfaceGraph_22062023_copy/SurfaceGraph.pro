@@ -11,10 +11,12 @@ CONFIG += c++17
 SOURCES += \
     interface.cpp \
     main.cpp \
+    parsing.cpp \
     surfacegraph.cpp
 
 HEADERS += \
     interface.h \
+    parsing.h \
     surfacegraph.h
 
 # Default rules for deployment.

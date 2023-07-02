@@ -12,7 +12,7 @@ public:
     Parsing(string Expr);
     void  setExpressao(string Expr);
     string getExpressao() { return expressao; }
-    int calcula(int x, int y);
+    float calcula(float x, float y);
     void show();
 
 
