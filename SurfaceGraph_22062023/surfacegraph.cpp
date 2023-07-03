@@ -79,12 +79,11 @@ float SurfaceGraph::calc(float x, float y, int op)
 
     if(op_Expr==1)
     {
-
+        return x+y;
     }
     if(op_Expr==7)
     {
-
-
+        return x*x+y*y;    
     }
     else
         qDebug()<<"nothing "<<i++;
