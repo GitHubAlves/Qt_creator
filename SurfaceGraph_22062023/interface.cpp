@@ -7,13 +7,14 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QString>
-#include <iostream>
-using std::cout;
+
+
 
 Interface::Interface(QWidget *parent) : QWidget(parent)
 {
 
      //O layout
+    letter =new SurfaceGraph;
     _layout         =new QHBoxLayout;
 
       //Box para inserir a expressão
@@ -28,16 +29,17 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _layoutParaBox2 =new QVBoxLayout;
 
     //Criação de linha editavel
-    _linha          =new QLineEdit;
+
+    _linha= new QLineEdit();
+
     _layoutParaBox1->addRow("Z=", _linha);
+
+
     //pega a expressao digitada na linha
 
     _ButtonParaBox1 =new QPushButton("Enter");
     _ButtonParaBox1->setFixedSize(100, 20);
     _layoutParaBox1->addWidget(_ButtonParaBox1);
-
-    _plotButton =new QPushButton("Plot");
-    _layoutParaBox1->addWidget(_plotButton);
 
     _Box1->setLayout(_layoutParaBox1);
 
@@ -48,24 +50,24 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _layout->addWidget(_Box1);
     _layout->addWidget(_Box2);
 
-//   QObject::connect(_ButtonParaBox1, SIGNAL(clicked(bool)),
-//                    this, SLOT(_ButtonParaBox1_clicked()));
+
+   QObject::connect(_ButtonParaBox1, SIGNAL(clicked(bool)),
+                    this, SLOT(_Enter_clicked()));
 
 
-     QObject::connect(_plotButton, SIGNAL(clicked(bool)),
-                     this, SLOT(_plotButton_clicked()) );
+//     QObject::connect(button1, SIGNAL(clicked(bool)),
+//                     this, SLOT(_Enter_clicked() ));
 
     this->setLayout(_layout);
 }
 
 
-void Interface::_plotButton_clicked()
+void Interface::_Enter_clicked()
 {
 
-    geratorGraph=new SurfaceGraph();
-    geratorGraph->GeratorGraph();
-    qDebug()<<"cliked-";
+    _text=_linha->text();
 
+    letter->setStr(_text);
 
 }
 

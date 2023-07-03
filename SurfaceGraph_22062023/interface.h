@@ -5,7 +5,6 @@
 
 #include "surfacegraph.h"
 
-
 #include <QVBoxLayout>
 #include <QSurfaceDataProxy>
 #include <QHBoxLayout>
@@ -27,7 +26,8 @@ public:
 
 public slots:
     //void _ButtonParaBox1_clicked();
-      void _plotButton_clicked();
+      void _Enter_clicked();
+
 
 private:
     QHBoxLayout     *_layout;
@@ -37,13 +37,13 @@ private:
     QVBoxLayout     *_layoutParaBox2;
     QLineEdit       *_linha;
     QPushButton     *_ButtonParaBox1;
-    QPushButton     *_plotButton;
-    QString         *_text;
-    SurfaceGraph    *_graph;
+    SurfaceGraph    *letter;
+    QString         _text;
+    SurfaceGraph    *_graph;    
     QSurfaceDataRow *dataRow;
     QSurfaceDataArray *dataArray;
     QSurfaceDataProxy  *dataProxy;
-    SurfaceGraph      *geratorGraph;
+
 };
 
 #endif // INTERFACE_H
