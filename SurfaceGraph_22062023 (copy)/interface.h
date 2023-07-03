@@ -27,7 +27,7 @@ public:
 public slots:
     //void _ButtonParaBox1_clicked();
       void _Enter_clicked();
-      void _update_clicked();
+
 
 private:
     QHBoxLayout     *_layout;
@@ -37,8 +37,7 @@ private:
     QVBoxLayout     *_layoutParaBox2;
     QLineEdit       *_linha;
     QPushButton     *_ButtonParaBox1;
-    QPushButton     *_updateButton;
-
+ //   SurfaceGraph    *letter;
     SurfaceGraph    *op;
     QString         _text;
     SurfaceGraph    *_graph;    

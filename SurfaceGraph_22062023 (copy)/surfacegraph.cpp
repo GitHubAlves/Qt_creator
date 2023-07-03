@@ -67,7 +67,6 @@ SurfaceGraph::SurfaceGraph(QWidget *parent): QWidget(parent)
 void SurfaceGraph::clearing()
 {
     dataArray->clear();
-    SurfaceGraph::~SurfaceGraph();
 
 }
 
@@ -79,6 +78,20 @@ float SurfaceGraph::calc(float x, float y, int op)
 
     if(op_Expr==1)
     {
+     for (int i = -10; i <= 10; i++)
+     {
+         dataRow = new QSurfaceDataRow();
+         for (int j = -10; j <= 10; j++) {
+             float x = i*0.5;
+             float y = j*0.5;
+             float z =calc(x, y, op_Expr);
+             qDebug()<<"for"<<op_Expr;
+             *dataRow << QVector3D(x, y, z);
+         }
+         dataArray->append(dataRow);
+     }
+
+     dataProxy->resetArray(dataArray);
 
     }
     if(op_Expr==7)

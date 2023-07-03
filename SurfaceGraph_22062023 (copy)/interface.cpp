@@ -41,12 +41,7 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
     _ButtonParaBox1->setFixedSize(100, 20);
     _layoutParaBox1->addWidget(_ButtonParaBox1);
 
-    _updateButton =new QPushButton("update");
-    _updateButton->setFixedSize(100, 20);
-    _layoutParaBox1->addWidget(_updateButton);
-
     _Box1->setLayout(_layoutParaBox1);
-    _updateButton->setLayout(_layoutParaBox1);
 
     _graph =  new SurfaceGraph();
     _layoutParaBox2->addWidget(_graph);
@@ -58,8 +53,6 @@ Interface::Interface(QWidget *parent) : QWidget(parent)
 
    QObject::connect(_ButtonParaBox1, SIGNAL(clicked(bool)),
                     this, SLOT(_Enter_clicked()));
-//    QObject::connect(_updateButton, SIGNAL(clicked(bool)),
-//                     this, SLOT(_update_clicked()));
 
 
 //     QObject::connect(button1, SIGNAL(clicked(bool)),
@@ -80,15 +73,8 @@ void Interface::_Enter_clicked()
     op->clearing();
     op->calc(0, 0, numero);
 
-
 }
-void Interface::_update_clicked()
-{
 
-
-
-
-}
 
 Interface::~Interface()
 {
